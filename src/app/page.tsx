@@ -1,9 +1,7 @@
-import React from 'react'
-import FlipTimer from '@/components/FlipTimer'
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
 import logo from '@/../public/fein-ai-logo.svg'
+import FlipTimer from '@/components/FlipTimer'
 import JoinWaitlist from '@/components/JoinWaitlist'
+import Image from 'next/image'
 
 export default function Home() {
 
