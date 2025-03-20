@@ -27,7 +27,7 @@ const flipAnimation = {
 };
 
 const FlipCard: React.FC<{ digit: string }> = ({ digit }) => (
-  <div className="relative w-10 h-16 sm:w-16 sm:h-24 bg-primary rounded-lg overflow-hidden">
+  <div className="relative w-10 h-16 sm:w-16 sm:h-24 bg-[#d7f48d] rounded-lg overflow-hidden">
     <AnimatePresence mode="popLayout">
       <motion.div
         key={digit}

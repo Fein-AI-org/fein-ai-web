@@ -25,7 +25,7 @@ export default function JoinWaitlist() {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button size="lg">Join the Waitlist</Button>
+                <Button className="bg-[#d7f48d] hover:bg-[#637041] hover:text-white" size="lg">Join the Waitlist</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
