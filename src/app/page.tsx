@@ -12,6 +12,7 @@ export default function Home() {
       <h1 className='text-2xl text-[#d7f48d] sm:text-4xl font-bold'>Countdown to June 3, 2025</h1>
       <FlipTimer endDate={endDate} />
       <JoinWaitlist />
+      <p>Latest change</p>
     </div>
   )
 }
