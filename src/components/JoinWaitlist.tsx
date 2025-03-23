@@ -30,6 +30,7 @@ type FormData = z.infer<typeof schema>;
 export default function JoinWaitlist() {
     const [open, setOpen] = useState(false);
     const [thankYouOpen, setThankYouOpen] = useState(false); // New state for thank you dialog
+    const [isSubmitting, setIsSubmitting] = useState(false); // New state for button disabled
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
         resolver: zodResolver(schema),
@@ -66,6 +67,7 @@ export default function JoinWaitlist() {
     };
 
     const onSubmit = async (data: FormData) => {
+        setIsSubmitting(true);
         try {
             await axios.post('https://prelaunch-backend.onrender.com/api/v1/notify/', data);
             console.log("Form Data:", data);
@@ -86,6 +88,8 @@ export default function JoinWaitlist() {
                     color: "#721c24",
                 },
             });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -120,8 +124,8 @@ export default function JoinWaitlist() {
                             </div>
                         </div>
                         <DialogFooter className="w-full flex items-center justify-start">
-                            <Button className="bg-[#d7f48d]" type="submit">
-                                Join Waitlist
+                            <Button className="bg-[#d7f48d]" type="submit" disabled={isSubmitting}>
+                                {isSubmitting ? 'Submitting...' : 'Join Waitlist'}
                             </Button>
                         </DialogFooter>
                     </form>
