@@ -18,10 +18,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import confetti from "canvas-confetti";
-import axios from "axios"; // Import axios
+import axios from "axios"; 
 
 const schema = z.object({
-    name: z.string().min(1, "Name is required"),
+    username: z.string().min(1, "Name is required"),
     email: z.string().email("Invalid email address"),
 });
 
@@ -108,8 +108,8 @@ export default function JoinWaitlist() {
                                 <Label htmlFor="name" className="text-right">
                                     Name
                                 </Label>
-                                <Input id="name" {...register("name")} placeholder="Your Name" className="col-span-3" />
-                                {errors.name && <span className="col-span-4 text-red-500">{errors.name.message}</span>}
+                                <Input id="username" {...register("username")} placeholder="Your Name" className="col-span-3" />
+                                {errors.username && <span className="col-span-4 text-red-500">{errors.username.message}</span>}
                             </div>
                             <div className="grid grid-cols-4 items-center gap-4">
                                 <Label htmlFor="email" className="text-right">
