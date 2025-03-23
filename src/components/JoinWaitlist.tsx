@@ -131,8 +131,8 @@ export default function JoinWaitlist() {
             <Dialog open={thankYouOpen} onOpenChange={setThankYouOpen}>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                        <DialogTitle>Thank You!</DialogTitle>
-                        <DialogDescription>
+                        <DialogTitle className="text-3xl text-center py-5">🎉 Thank You! 🎉</DialogTitle>
+                        <DialogDescription className="text-center">
                             Thank you for joining the waitlist. We will notify you when we are ready to launch.
                         </DialogDescription>
                     </DialogHeader>
